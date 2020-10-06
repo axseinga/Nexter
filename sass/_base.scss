@@ -33,3 +33,18 @@ body {
     font-weight: 300;
     line-height: 1.6;
 }
+
+.container {
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content); 
+    // first row is 80% of the viewport height. 
+    // second row needs to adapt to the content, it can be used 'auto' instead. 
+    // third row is 40% of the viewport width. 
+    //to make all of them responsive
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; // sidebar & 8 equally size columns with fixed width of 14rem (1140/8=142.8px/14rem), the max is 14rem, can be lower but never below content, 2 columns with 1fr sizes on both sizes so they shrink first - to centered 8 columns in the viewport, minmax(6rem, 1fr) - so it always have some margin
+
+    & > * {
+        padding: 40px;
+        font-size: 3rem;
+    }
+}

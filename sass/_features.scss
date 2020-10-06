@@ -1,4 +1,31 @@
 .features {
-    background-color: $color-grey-light-2;
     grid-column: center-start / center-end; // 8 columns
+
+    margin: 15rem 0;
+
+    display: grid; // subgrid will be in level 2 of the css grif layout, right now only in newest firefox 7.1
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // so the columns are responsive goes to 2 and to 1 column when there is no space, auto-fit creates as many tracks as it can fit based on the width that we define - defined by min-max.
+    gap: 6rem;
+    align-items: start; // so items in feature are aligned
+}
+
+.feature {
+    
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    row-gap: 1.5rem;
+    column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; // -1 only works with explicit grid
+        transform: translateY(-1rem); // so icon in centered to the text
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
 }

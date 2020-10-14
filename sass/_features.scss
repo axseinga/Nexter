@@ -8,6 +8,10 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // so the columns are responsive goes to 2 and to 1 column when there is no space, auto-fit creates as many tracks as it can fit based on the width that we define - defined by min-max.
     gap: 6rem;
     align-items: start; // so items in feature are aligned
+
+    @media only screen and (max-width: $bp-small) {
+        margin: 8rem 0;
+    }
 }
 
 .feature {

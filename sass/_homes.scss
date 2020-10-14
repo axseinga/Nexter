@@ -5,6 +5,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // as many columns as fit into the grid container, each of these columns to have at least 25rem
     gap: 7rem;
+
+    @media only screen and (max-width: $bp-small) {
+        margin: 8rem 0;
+    }
 }
 
 .home {
